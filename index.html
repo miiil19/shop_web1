@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+    <div class="logot">
+        <img src="img/logo.svg" alt="logo">
+    </div>
+
+    <div class="name">
+        <h1>BLOOMY</h1>
+        <h2>flower shop</h2>
+    </div>
+
+    <div class="bask">
+        <img src="img/bask.svg" alt="Корзина">
+        <span class="bask-cnt">0</span>
+    </div>
+    </header>
+
+    <main>
+    <div class="product" data-id="1">
+        <img src="img/prod1.jpg" alt="prod1">
+        <p class="prod-title">Эквадорская роза</p>
+        <p class="prod-price">370 ₽</p>
+        <button class="btn prod-add">Добавить в корзину</button>
+    </div>
+
+    <div class="product" data-id="2">
+        <img src="img/prod2.jpg" alt="prod2">
+        <p class="prod-title">Роза мандала</p>
+        <p class="prod-price">550 ₽</p>
+        <button class="btn prod-add">Добавить в корзину</button>
+    </div>
+
+    <div class="product" data-id="3">
+        <img src="img/prod3.jpg" alt="prod3">
+        <p class="prod-title">Пионовидная роза</p>
+        <p class="prod-price">380 ₽</p>
+        <button class="btn prod-add">Добавить в корзину</button>
+    </div>
+    </main>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+        <span class="close">&times;</span>
+        <h2>Ваша корзина</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">Итого: <span id="cartTotal">0 ₽</span></div>
+        <button id="checkoutBtn" class="btn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <div class="order-modal" id="orderModal">
+        <div class="order-content">
+        <span class="close-order">&times;</span>
+        <h2>Оформление заказа</h2>
+        <form id="orderForm">
+            <input type="text" name="firstName" placeholder="Имя" required pattern="[A-Za-zА-Яа-я\s\-]+">
+            <input type="text" name="lastName" placeholder="Фамилия" required pattern="[A-Za-zА-Яа-я\s\-]+">
+            <input type="text" name="address" placeholder="Адрес доставки" required>
+            <input type="tel" name="phone" placeholder="Номер телефона" required pattern="\+7\d{10}" maxlength="12" value="+7">
+            <button type="submit" class="btn">Создать заказ</button>
+        </form>
+        </div>
+    </div>
+
+    <div id="order-message">Заказ создан!</div>
+    <div id="cart-empty-message">Корзина пуста! Добавьте товары перед оформлением заказа.</div>
+    <script src="script.js"></script>
+
+</body>
+</html>
